@@ -1,43 +1,47 @@
-# Astro Starter Kit: Minimal
+# Aceros Arsil - Landing Page Corporativa
 
-```sh
-npm create astro@latest -- --template minimal
-```
+Sitio web estático desarrollado para Aceros Arsil, enfocado en alto rendimiento, SEO y diseño responsive adaptado al sector industrial.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## 🛠 Stack Tecnológico
 
-## 🚀 Project Structure
+* **Framework:** [Astro](https://astro.build/) (v4) - Generación de sitio estático (SSG).
+* **Estilos:** [Tailwind CSS](https://tailwindcss.com/) - Diseño responsive y utilidades.
+* **Lenguaje:** JavaScript / TypeScript.
+* **Iconos:** Assets SVG y PNG optimizados.
 
-Inside of your Astro project, you'll see the following folders and files:
+## 📂 Estructura del Proyecto
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+* `src/components/`: Componentes modulares (Navbar, Hero, About, Services, etc.).
+* `src/layouts/`: Plantilla base HTML (SEO y metadatos).
+* `src/pages/`: Rutas del sitio (index.astro).
+* `public/`: Imágenes y activos estáticos (logos, fondos).
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## 🚀 Instalación y Desarrollo
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+Para ejecutar este proyecto localmente:
 
-Any static assets, like images, can be placed in the `public/` directory.
+1.  **Instalar dependencias:**
+    ```bash
+    npm install
+    ```
 
-## 🧞 Commands
+2.  **Iniciar servidor de desarrollo:**
+    ```bash
+    npm run dev
+    ```
+    El sitio correrá en `http://localhost:4321`.
 
-All commands are run from the root of the project, from a terminal:
+3.  **Compilar para producción:**
+    ```bash
+    npm run build
+    ```
+    Genera la carpeta `dist/` lista para subir al servidor.
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+## 📝 Notas Técnicas
 
-## 👀 Want to learn more?
+* **Navbar:** Se implementó una lógica de `md:hidden` y `md:block` para cambiar entre el menú móvil y de escritorio sin conflictos de layout.
+* **Responsive:** Se utilizaron breakpoints personalizados de Tailwind para ajustar imágenes y márgenes negativos en la sección "Acerca de".
+* **Formularios:** El formulario de contacto es frontend. Se requiere integrar un servicio de backend o API (como Formspree) para el envío de correos.
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+---
+*Desarrollado para Aceros Arsil.*

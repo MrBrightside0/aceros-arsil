@@ -1,0 +1,115 @@
+---
+// src/components/Navbar.astro
+const navLinks = [
+  { name: "Acerca", href: "#acerca" },
+  { name: "Productos", href: "#productos" },
+  { name: "Servicios y capacidades", href: "#servicios" },
+  { name: "Ventajas", href: "#" },
+  { name: "Certificaciones", href: "#certificaciones" },
+];
+---
+
+<header class="fixed top-0 left-0 w-full bg-white shadow-sm z-50 h-20 md:h-24 transition-all">
+  
+  <div class="max-w-[1920px] mx-auto h-full flex items-center justify-between md:justify-start relative">
+    
+    <a href="/" class="relative z-10 flex items-center pl-6 h-full 
+                       md:absolute md:left-0 md:top-0 md:h-[150%] md:w-[280px] md:bg-[#2A324B] md:pl-0 md:justify-center md:shadow-2xl">
+        
+        <img src="/logo1.png" alt="Aceros Arsil" class="h-8 w-auto object-contain md:hidden" />
+        <img src="/logo.png" alt="Aceros Arsil" class="hidden md:block h-10 md:h-14 w-auto object-contain" />
+
+    </a>
+
+    <div class="flex items-center pr-6 h-full 
+                md:w-full md:justify-end md:pl-[320px] md:pr-12">
+        
+        <nav class="hidden min-[1130px]:flex gap-6 xl:gap-10 text-sm font-bold text-gray-600 mr-auto">
+            {navLinks.map((link) => (
+                <a href={link.href} class="hover:text-[#2A324B] transition-colors uppercase text-xs tracking-widest whitespace-nowrap">
+                    {link.name}
+                </a>
+            ))}
+        </nav>
+
+        <div class="flex items-center gap-4 relative z-20">
+            <a href="#contacto" class="hidden md:flex items-center gap-2 bg-[#6EE7B7] text-[#2A324B] px-6 py-3 rounded font-bold text-xs md:text-sm hover:bg-[#5CD6A6] transition-colors uppercase tracking-wide shadow-sm hover:shadow-md">
+                Contacto
+                <svg width="10" height="10" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 11L11 1M11 1H3M11 1V9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </a>
+
+            <button id="menu-btn" class="min-[1130px]:hidden text-[#2A324B] hover:text-[#394158] transition-colors focus:outline-none relative w-8 h-8 flex items-center justify-center">
+                 <svg id="icon-menu" class="w-8 h-8 transition-all duration-300 transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                 <svg id="icon-close" class="w-8 h-8 transition-all duration-300 transform absolute inset-0 opacity-0 scale-50 rotate-90" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+        </div>
+    </div>
+
+  </div>
+</header>
+
+<div class="h-20 md:h-24 w-full bg-transparent"></div>
+
+<div id="mobile-menu" class="fixed inset-0 bg-[#2A324B]/95 backdrop-blur-sm z-40 flex flex-col items-center justify-center gap-8 transition-all duration-300 ease-in-out opacity-0 pointer-events-none px-6">
+    {navLinks.map((link) => (
+      <a href={link.href} class="mobile-link text-white hover:text-[#6EE7B7] font-extrabold text-2xl uppercase tracking-widest transition-colors transform translate-y-4 opacity-0 transition-all duration-500 delay-[100ms]">
+          {link.name}
+      </a>
+    ))}
+
+    <a href="#contacto" class="mobile-link flex items-center justify-center gap-2 bg-[#6EE7B7] text-[#2A324B] px-8 py-4 rounded-full font-bold text-sm hover:bg-[#5CD6A6] transition-all uppercase tracking-wide shadow-lg mt-4 transform translate-y-4 opacity-0 transition-all duration-500 delay-[300ms]">
+      Contacto
+      <svg width="10" height="10" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M1 11L11 1M11 1H3M11 1V9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+  </a>
+</div>
+
+<script>
+  
+  const menuBtn = document.getElementById('menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const iconMenu = document.getElementById('icon-menu');
+  const iconClose = document.getElementById('icon-close');
+  const mobileLinks = document.querySelectorAll('.mobile-link');
+
+  function toggleMenu() {
+    if (!mobileMenu || !iconMenu || !iconClose) return;
+
+    const isOpen = mobileMenu.classList.contains('opacity-100');
+
+    mobileMenu.classList.toggle('opacity-0', isOpen);
+    mobileMenu.classList.toggle('pointer-events-none', isOpen);
+    mobileMenu.classList.toggle('opacity-100', !isOpen);
+    mobileMenu.classList.toggle('pointer-events-auto', !isOpen);
+
+    if (!isOpen) {
+        iconMenu.classList.add('opacity-0', 'rotate-90', 'scale-50');
+        iconClose.classList.remove('opacity-0', 'scale-50', 'rotate-90');
+    } else {
+        iconMenu.classList.remove('opacity-0', 'rotate-90', 'scale-50');
+        iconClose.classList.add('opacity-0', 'scale-50', 'rotate-90');
+    }
+
+    mobileLinks.forEach((link, index) => {
+        if (!isOpen) {
+            setTimeout(() => {
+                link.classList.remove('translate-y-4', 'opacity-0');
+            }, 100 + (index * 50));
+        } else {
+            link.classList.add('translate-y-4', 'opacity-0');
+        }
+    });
+
+    document.body.classList.toggle('overflow-hidden', !isOpen);
+  }
+
+  if (menuBtn) {
+    menuBtn.addEventListener('click', toggleMenu);
+    mobileLinks.forEach(link => {
+        link.addEventListener('click', toggleMenu);
+    });
+  }
+</script>

@@ -1,0 +1,101 @@
+---
+// src/components/Products.astro
+---
+<section id="productos" class="bg-[#EFF6F9] py-20 lg:py-32 px-6 md:px-12 lg:px-20">
+    
+    <div class="max-w-[1920px] mx-auto mb-16">
+        
+        <div class="mb-6">
+            <div class="inline-flex items-center bg-[#D0E6E8] px-4 py-2 rounded-sm">
+                <img src="/span-productos.png" alt="Productos" class="h-3 md:h-4 w-auto object-contain" />
+            </div>
+        </div>
+        
+        <h2 class="text-[#2A324B] text-3xl md:text-4xl lg:text-5xl font-extrabold uppercase leading-tight max-w-4xl mb-8">
+            Trabajamos con acero certificado de las <br class="hidden lg:block">
+            principales siderúrgicas nacionales
+        </h2>
+
+        <div class="w-full h-px bg-gray-300 mb-8"></div>
+        
+        <p class="text-gray-600 text-base md:text-xl max-w-4xl leading-relaxed">
+            Ideal para naves industriales, parques, estructuras y proyectos urbanos. Nos especializamos en productos listos para obra y soluciones para cercos perimetrales.
+        </p>
+    </div>
+
+    <div class="max-w-[1920px] mx-auto flex flex-col gap-3">
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+            
+            <div class="bg-white rounded-xl p-8 flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group h-full min-h-[420px]">
+                <div class="relative z-10">
+                    <h3 class="text-[#2A324B] text-2xl font-bold mb-4">Lámina en rollo</h3>
+                    <p class="text-gray-500 text-base leading-relaxed mb-6">
+                        Lámina en rollo calibre 24 de 4 pies de ancho y calibre 26 de 4 y 3 pies de ancho, en acero galvanizado, ZintroAlum y Pintro, ideal para cubiertas, fachadas y cerramientos metálicos.
+                    </p>
+                    
+                    <a href="#" class="inline-flex items-center gap-2 bg-[#6EE7B7] text-[#2A324B] px-6 py-2.5 rounded font-bold text-sm hover:bg-[#5CD6A6] transition-colors shadow-sm">
+                        Ver más
+                        <svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 11L11 1M11 1H3M11 1V9"/></svg>
+                    </a>
+                </div>
+                <div class="mt-8 flex justify-end items-end relative -mr-4 -mb-4">
+                    <img src="/prod-lamina.png" alt="Lámina en rollo" class="w-48 md:w-56 h-auto object-contain transform group-hover:scale-105 transition-transform duration-500" />
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl p-8 flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group h-full min-h-[420px]">
+                <div class="relative z-10">
+                    <h3 class="text-[#2A324B] text-2xl font-bold mb-4">Polín y perfiles estructurales</h3>
+                    <p class="text-gray-500 text-base leading-relaxed">
+                        Polín en anchos desde 3" a 12", en calibres 10, 12 y 14, diseñado para estructuras ligeras, techumbres y obras industriales que requieren resistencia y estabilidad.
+                    </p>
+                </div>
+                <div class="mt-8 flex justify-center items-end">
+                    <img src="/prod-polin.png" alt="Polín estructural" class="w-full max-w-[280px] h-auto object-contain transform group-hover:scale-105 transition-transform duration-500" />
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl p-8 flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group h-full min-h-[420px]">
+                <div class="relative z-10">
+                    <h3 class="text-[#2A324B] text-2xl font-bold mb-4">Estructura metálica y varilla de construcción</h3>
+                    <p class="text-gray-500 text-base leading-relaxed">
+                        Suministro de viga, perfiles estructurales y varilla de construcción para naves, marcos rígidos, claros amplios y obras de alto tráfico.
+                    </p>
+                </div>
+                <div class="mt-8 flex justify-center items-end">
+                    <img src="/prod-estructura.png" alt="Varilla de construcción" class="w-full max-w-[280px] h-auto object-contain transform group-hover:scale-105 transition-transform duration-500" />
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-3">
+            
+            <div class="bg-white rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow overflow-hidden group flex flex-col md:flex-row items-center gap-8 min-h-[320px]">
+                <div class="md:w-1/2 relative z-10">
+                    <h3 class="text-[#2A324B] text-2xl font-bold mb-4">Tubería para barandales y parques</h3>
+                    <p class="text-gray-500 text-base leading-relaxed">
+                        Tubería para barandales, parques y áreas públicas, con opciones para proyectos urbanos, deportivos y recreativos.
+                    </p>
+                </div>
+                <div class="md:w-1/2 flex justify-center md:justify-end">
+                    <img src="/prod-tuberia.png" alt="Tubería" class="w-full max-w-[320px] h-auto object-contain transform group-hover:scale-105 transition-transform duration-500" />
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow overflow-hidden group flex flex-col md:flex-row items-center gap-8 min-h-[320px]">
+                <div class="md:w-1/2 relative z-10">
+                    <h3 class="text-[#2A324B] text-2xl font-bold mb-4">Cercos para parques industriales</h3>
+                    <p class="text-gray-500 text-base leading-relaxed">
+                        Sistemas de cercado industrial con reja de acero (rejacero) y malla ciclónica, pensados para protección perimetral en parques industriales, bodegas y empresas.
+                    </p>
+                </div>
+                <div class="md:w-1/2 flex justify-center md:justify-end">
+                    <img src="/prod-cercos.png" alt="Cercos industriales" class="w-full max-w-[280px] h-auto object-contain transform group-hover:scale-105 transition-transform duration-500" />
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
