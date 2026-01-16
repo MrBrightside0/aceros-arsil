@@ -3,7 +3,8 @@
 const navLinks = [
   { name: "Acerca", href: "#acerca" },
   { name: "Productos", href: "#productos" },
-  { name: "Servicios y capacidades", href: "#servicios" },
+  // CAMBIO 1: Simplificado a "Servicios" para que no ocupe tanto espacio
+  { name: "Servicios", href: "#servicios" }, 
   { name: "Ventajas", href: "#" },
   { name: "Certificaciones", href: "#certificaciones" },
 ];
@@ -24,9 +25,11 @@ const navLinks = [
     <div class="flex items-center pr-6 h-full 
                 md:w-full md:justify-end md:pl-[320px] md:pr-12">
         
-        <nav class="hidden min-[1130px]:flex gap-6 xl:gap-10 text-sm font-bold text-gray-600 mr-auto">
+        <nav class="hidden min-[1130px]:flex gap-6 xl:gap-10 text-sm font-bold text-gray-600 mr-auto md:font-semibold">
             {navLinks.map((link) => (
-                <a href={link.href} class="hover:text-[#2A324B] transition-colors uppercase text-xs tracking-widest whitespace-nowrap">
+                // CAMBIO 2: Cambié 'tracking-widest' por 'tracking-wide'.
+                // 'widest' separaba demasiado las letras, haciendo que el menú fuera larguísimo.
+                <a href={link.href} class="hover:text-[#2A324B] transition-colors uppercase text-xs tracking-wide whitespace-nowrap">
                     {link.name}
                 </a>
             ))}
@@ -68,7 +71,6 @@ const navLinks = [
 </div>
 
 <script>
-  
   const menuBtn = document.getElementById('menu-btn');
   const mobileMenu = document.getElementById('mobile-menu');
   const iconMenu = document.getElementById('icon-menu');
